@@ -1,0 +1,18 @@
+# See https://github.com/bxparks/EpoxyDuino for documentation about this
+# Makefile to compile and run Arduino programs natively on Linux or MacOS.
+#
+APP_NAME := EpoxyDebuggerDemoTest
+ARDUINO_LIBS := AUnit EpoxyDebuggerDemo
+EXTRA_CXXFLAGS += -Werror
+EXTRA_CFLAGS += -Werror
+
+include ../../../../EpoxyDuino/EpoxyDuino.mk
+
+# Additional hints for Visual Studio Code debug
+# TODO: move this to its own "DebugConfig.mk" include
+# include ../DebugConfig.mk
+# for "make debug"
+debug: EXTRA_CXXFLAGS += -DDEBUG -g
+debug: EXTRA_CFLAGS += -DDEBUG -g
+debug: all
+
