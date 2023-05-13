@@ -2,7 +2,6 @@
 # Makefile to compile and run Arduino programs natively on Linux or MacOS.
 #
 APP_NAME := Average3Demo
-#ARDUINO_LIBS := AUnit EpoxyDebuggerDemo
 ARDUINO_LIBS := EpoxyDebuggerDemo
 EXTRA_CXXFLAGS += -Werror
 EXTRA_CFLAGS += -Werror

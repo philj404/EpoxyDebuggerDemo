@@ -5,10 +5,10 @@ tests:
 		make -C $$(dirname $$i) -j; \
 	done
 
-# Running all the examples probably doesn't make much sense.
+# Trying to run all the examples probably doesn't make much sense.
 # It is hard to interpret arbitrary example results. Examples may not work
-# in the Linux environment. The example may never finish.
-
+# in the Linux environment. Examples often never finish (by design).
+#
 #
 # For repeatable, consistent detection of regressions, make unit tests:
 #
@@ -21,7 +21,6 @@ runtests:
 		echo '==== SKIPPING:' $$(dirname $$i);\
 	done
 	#for i in */Makefile; do \
-	#	echo '==== SKIPPING:' $$(dirname $$i);
 	#	echo '==== Running:' $$(dirname $$i); \
 	#	make -C $$(dirname $$i) run; \
 	#done
