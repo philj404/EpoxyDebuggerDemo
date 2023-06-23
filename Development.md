@@ -1,22 +1,6 @@
 # *EpoxyDebuggerDemo* library feature development notes
 
-### Usage 
-This library is made to work with the Arduino platform.  It is not dependent on other libraries (except for Arduino.h).  _Users_ of the library should not need to include other libraries.
 
-### Development/Continuous Integration
-For development (adding features, regression testing, ...), this library depends on the following:
-* Github.com (website for repository)
-* Github Actions
-  * `githubci.yml` -- Arduino board configuration build checks (AVR, ESP32 ...)
-  * `aunit_tests.yml` -- regression tests on Linux
-
-These Github scripts will check that code compiles and tests PASS, or warn you if there is a regression.
-
-### Regression testing
-Regression tests are added to extras/tests/* sketches, and depend on:
-* Linux build environment
-* the "AUnit" unit testing library
-* the "EpoxyDuino" library for basic Linux compatibity
 
 ### Linux development
 I find it useful to develop code on a Linux computer, as this lets me run my regression tests directly without downloading a sketch, or pushing each change to github.
@@ -66,9 +50,14 @@ Under "Makefile Tools" tab:
 *  set "Configuration" to "Debug"
 *  set "Build target" to "configuredBuild"
 
-Warnings:
-* The VS code build controls/settings are a bit quirky.  Probably could be cleaner (someday)
-* The VS code formatter uses clang-format rather than "Arduino 1.0" or "Arduino 2.0" formatters.  This mismatch could cause merge conflicts (for example it can keep generating trivial whitespace changes) if developers are not consistent in which formatter they use.
+### Warnings:
+* Right now the code must be supported for at least FOUR different platforms.  Any changes need to be confirmed to STILL WORK for all these platforms:
+  * Arduino IDE 1.0 (for users)
+  * Arduino IDE 2.0 (for users)
+  * Linux Makefile (for developers and GitHub integration tests)
+  * Visual Studio Code (for local developer debugging)
+* The VS code build controls and settings are a bit quirky.  Probably could be cleaner (someday)
+* The VS code formatter uses clang-format rather than "Arduino 1.0" or "Arduino 2.0" formatters.  This auto-format mismatch could cause merge conflicts (for example it can keep generating trivial whitespace changes) if ALL developers are not consistent in which formatter they use.
 * Note that VS code C++ Intellisense does NOT use the Makefiles to determine what the include paths and build-time #defines are. That needs to be coordinated (Makefiles and .vscode/c_cpp_properties.json).  That should be OK for this example, but if the Makefile gets more complicated, c_cpp_properties.json (or the other .json files) may need to get more complicated too.
 
 ### References
