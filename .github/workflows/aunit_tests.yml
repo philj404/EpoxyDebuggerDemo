@@ -1,4 +1,4 @@
-name: EpoxyDebuggerDemo unit test check
+name: CHANGE_ME_EpoxyDebuggerDemo unit test check
 
 on: [pull_request, push]
 

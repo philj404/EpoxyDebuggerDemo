@@ -1,4 +1,4 @@
-name: EpoxyDebuggerDemo Lib build permutation check
+name: CHANGE_ME_EpoxyDebuggerDemo Lib build permutation check
 
 # See https://learn.adafruit.com/the-well-automated-arduino-library/doxygen
 
@@ -29,8 +29,7 @@ jobs:
     #    github repository has a secret GH_REPO_TOKEN with repo access
     #        (used to push generated docs back onto github)
     #
-    # NOTE: at this time I don't think doxygen is worth it for this
-    #       library. Overkill for a "simple shell"?
+    # NOTE: CHANGE_ME check if doxygen is worth it for your library
     #
     #       See the README.md for how to use.
     #
